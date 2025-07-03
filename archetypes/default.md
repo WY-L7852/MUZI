@@ -10,6 +10,7 @@ keywords: # 关键词
   - 
   - 
 description: "文章描述"
+summary: 概述
 weight: # 权重
 slug: "" # 使用 slug属性 来作为当前文章的有效 url 的末尾部分
 draft: false # 是否为草稿
