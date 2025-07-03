@@ -1,0 +1,95 @@
+baseURL: https://example.org/
+languageCode: en-us
+title: My New Hugo Site
+
+languageCode: "zh-cn"  # 网站的默认语言代码
+title: "木子's Blog"  # 博客的标题
+theme: "PaperMod"  # 使用的主题名称
+
+enableInlineShortcodes: true  # 启用内联短代码
+enableEmoji: true  # 启用Emoji表情支持
+enableRobotsTXT: true  # 生成 robots.txt 文件
+hasCJKLanguage: true  # 启用CJK语言支持
+
+buildDrafts: false  # 是否构建草稿文章
+buildFuture: false  # 是否构建将来发布时间的文章
+buildExpired: false  # 是否构建过期的文章
+
+summaryLength: 140  # 文章概要显示的字数
+pagination:
+  disableAliases: false
+  pagerSize: 5
+
+minify:
+  disableXML: true  # 用XML文件压缩
+
+languages:
+  en:
+    languageName: "Chinese"
+    weight: 1
+    taxonomies:
+      category: categories
+      tag: tags
+      series: series
+    menu:
+      main:
+        - identifier: "search"
+          name: "搜索"
+          url: "search"
+          weight: 10
+        - identifier: "posts"
+          name: "文章"
+          url: "posts"
+          weight: 30
+        - identifier: "archives"
+          name: "归档"
+          url: "archives"
+          weight: 50
+        - identifier: "tags"
+          name: 标签
+          url: tags/
+          weight: 60
+        - identifier: "about"
+          name: "关于"
+          url: "about"
+          weight: 70
+
+params:
+  env: "production"  # 当前环境
+  description: "个人博客，记录和分享"  # 网站描述
+  author: "木子"  # 作者名称
+  defaultTheme: "auto"  # 默认主题模式
+  ShowCodeCopyButtons: true  # 显示代码复制按钮
+  ShowReadingTime: false  # 显示阅读时间
+  ShowShareButtons: false  # 显示分享按钮
+  ShowPostNavLinks: true  # 显示文章导航链接
+  ShowBreadCrumbs: true  # 显示面包屑导航
+
+  fuseOpts:
+      isCaseSensitive: false
+      shouldSort: true
+      location: 0
+      distance: 1000
+      threshold: 0.4
+      minMatchCharLength: 0
+      keys: ["title", "permalink", "summary"]
+
+  homeInfoParams:
+    Title: "Welcome!"
+    Content: >
+      随便看看吧 ^_^
+
+  socialIcons:
+    - name: github
+      title: View Source on Github
+      url: "https://github.com/WY-L7852"
+    - name: email
+      title: Contact with me
+      url: "mailto:weiyili51@gmail.com"
+
+outputs:
+  home:
+    - "HTML"
+    - "RSS"
+    - "JSON"  # 用于搜索功能
+    
