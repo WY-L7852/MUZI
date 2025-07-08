@@ -53,6 +53,18 @@ languages:
           name: "关于"
           url: "about"
           weight: 70
+markup:
+  goldmark:
+    extensions:
+      passthrough:
+        delimiters:
+          block:
+          - - $$
+            - $$
+          inline:
+          - - $
+            - $
+        enable: true
 
 params:
   env: "production"  # 当前环境
@@ -64,6 +76,8 @@ params:
   ShowShareButtons: false  # 显示分享按钮
   ShowPostNavLinks: true  # 显示文章导航链接
   ShowBreadCrumbs: true  # 显示面包屑导航
+  # 启用数学公式渲染
+  math: true
 
   fuseOpts:
       isCaseSensitive: false
