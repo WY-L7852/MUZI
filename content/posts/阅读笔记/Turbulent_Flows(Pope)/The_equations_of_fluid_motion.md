@@ -22,6 +22,7 @@ TocOpen: true # 自动展开目录
 hidemeta: false # 是否隐藏文章的元信息
 disableShare: true # 底部不显示分享栏
 showbreadcrumbs: true #顶部显示路径
+math: true
 cover:
     image: "" #图片路径例如：posts/tech/123/123.png
     caption: "" #图片底部描述
@@ -38,3 +39,79 @@ $$
 当视作连续介质时，意味着存在一个中间尺度 $l^*$, 并且$\lambda << l^* << l$，使得分子性质在一个体积 $V = {l^*}^3$ 上的平均。比如在 $x$ 处的区域 $\mathcal{V_x}$ 的密度 $\rho(\mathbf{x}, t)$ 为 $\mathcal{V_x}$ 的质量除以体积 $V$
 
 # Eulerian and Lagrangian fields
+
+**Eulerian fields**:
+
+通过固定的空间点来描述物理量，而不跟踪具体的粒子或物体。比如连续密度场 $\rho(\mathbf{x}, t)$, 连续速度场 $\boldsymbol{U}(\mathbf{x}, t)$
+
+**Lagrangian Fields:**
+
+跟踪单个粒子或物体的轨迹来研究系统的演化
+
+## Solution of Exercise
+
+$$
+\begin{equation}
+\frac{d\boldsymbol{s}}{dt}=\frac{d}{dt}\boldsymbol{X}^+(t, \boldsymbol{Y}+d\boldsymbol{Y})-\frac{d}{dt}\boldsymbol{X}^+(t, \boldsymbol{Y})
+\end{equation}
+$$
+
+位移 $\boldsymbol{X}^+$ 对时间的导数就是速度，所以上式可以化简为
+
+$$
+\begin{equation}
+\frac{d\boldsymbol{s}}{dt}=\boldsymbol{U}^+(t, \boldsymbol{Y}+d\boldsymbol{Y})-\boldsymbol{U}^+(t, \boldsymbol{Y})
+\end{equation}
+$$
+
+将速度转换至Eulerian fields, 可得
+
+$$
+\begin{equation}
+\label{eq:4}
+\frac{d\boldsymbol{s}}{dt}=\boldsymbol{U}(\boldsymbol{X}^+(t, \boldsymbol{Y}+d\boldsymbol{Y}), t)-\boldsymbol{U}(\boldsymbol{X}^+(t, \boldsymbol{Y}), t)
+\end{equation}
+$$
+
+根据原式
+
+$$
+\begin{equation}
+\boldsymbol{s}(t)=\boldsymbol{X}^+(t,\boldsymbol{Y}+d\boldsymbol{Y})-\boldsymbol{X}^+(t, \boldsymbol{Y})
+\end{equation}
+$$
+
+可得
+
+$$
+\begin{equation}
+\label{eq:6}
+\boldsymbol{X}^+(t,\boldsymbol{Y}+d\boldsymbol{Y})=\boldsymbol{s}(t)+\boldsymbol{X}^+(t, \boldsymbol{Y})
+\end{equation}
+$$
+
+将等式 $\ref{eq:6}$ 代入等式 $\ref{eq:4}$ , 可得
+$$
+\begin{equation}
+\label{eq:7}
+\frac{d\boldsymbol{s}}{dt}=\boldsymbol{U}\Big(\boldsymbol{X}^+(t, \boldsymbol{Y})+\boldsymbol{s}(t), t\Big)-\boldsymbol{U}\Big(\boldsymbol{X}^+(t, \boldsymbol{Y}), t\Big)
+\end{equation}
+$$
+将 $\boldsymbol{U}\Big(\boldsymbol{X}^+(t, \boldsymbol{Y})+\boldsymbol{s}(t), t\Big)$ 在 $\boldsymbol{X}^+(t, \boldsymbol{Y})+\boldsymbol{s}(t)$  处泰勒展开，可以得到
+$$
+\boldsymbol{U}\Big(\boldsymbol{X}^+(t, \boldsymbol{Y})+\boldsymbol{s}(t), t\Big) = \boldsymbol{U}\Big(\boldsymbol{X}^+(t, \boldsymbol{Y}), t\Big) + \nabla \boldsymbol{U}\Big(\boldsymbol{X}^+(t, \boldsymbol{Y}), t\Big) \cdot \boldsymbol{s}(t)+R
+$$
+由于 $d\boldsymbol{Y}$ 是无限小量，高阶小项 $R$ 可以忽略。代入等式 $\ref{eq:7}$ ，可以得到
+$$
+\begin{equation}
+\frac{d\boldsymbol{s}}{dt}= \nabla \boldsymbol{U}\Big(\boldsymbol{X}^+(t, \boldsymbol{Y}), t\Big) \cdot \boldsymbol{s}(t)
+\end{equation}
+$$
+转换为行向量的记法。可得
+$$
+\begin{align*}
+\frac{d\boldsymbol{s}}{dt} &=\boldsymbol{s}(t) \cdot \nabla \boldsymbol{U}\Big(\boldsymbol{X}^+(t, \boldsymbol{Y}), t\Big)\\
+&=\boldsymbol{s} \cdot (\nabla \boldsymbol{U})_{\boldsymbol{x} = \boldsymbol{X}^+(t, \boldsymbol{Y})}
+\end{align*}
+$$
+
