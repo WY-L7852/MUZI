@@ -115,3 +115,46 @@ $$
 \end{align*}
 $$
 
+# The continuity equation
+
+## 质量守恒或连续性方程的推导
+
+假设存在一个控制体，密度为 $\rho$ ，体积为 $V$ ，那么其质量 $M$ 为:
+$$
+M = \int_V\rho dV
+$$
+考虑其边界面为 $S$，有向外的法向量 $\mathbf{n}$，那么单位时间流经边界 $S$ 的的物质质量 $\Phi$ 为:
+$$
+\Phi = \int_S\rho \mathbf{U} \cdot\mathbf{n}dS
+$$
+其中 $\mathbf{U}$ 为物质的速度矢量。
+
+根据质量守恒定理，质量不会凭空消失或产生，所以对于一个固定的控制体积，其质量变化应当等于从其边界处流入流出的质量总和，所以有
+$$
+\frac{dM}{dt} = -\Phi
+$$
+这里存在一个负号是因为我们假设法向量 $\mathbf{n}$ 是指向控制体外的，也就是说控制体内的质量是在减少，因此 $\frac{dM}{dt} <0$ 。
+
+将 $M$ 和 $\Phi$ 代入，有
+
+$$
+\frac{d}{dt}\int_V\rho dV = -\int_S\rho \mathbf{U} \cdot\mathbf{n}dS
+$$
+
+根据散度定理，右边会变成 $-\int_V \nabla\cdot(\rho\mathbf{U}) dV$ ，因此得到
+
+$$
+\begin{align*}
+&\frac{d}{dt}\int_V\rho dV = -\int_V \nabla\cdot(\rho\mathbf{U}) dV \\ \\
+&\frac{d}{dt}\int_V\rho dV + \int_V \nabla\cdot(\rho\mathbf{U}) dV = 0 \\ \\
+&\int_V \Big(\frac{d\rho}{dt} + \nabla\cdot(\rho\mathbf{U})\Big) dV= 0
+\end{align*}
+$$
+
+由于上述等式对于任意体积 $V$ 都成立，因此被积函数为 0。最终，可以得到质量守恒方程也就是连续性方程：
+
+$$
+\frac{\partial \rho}{\partial t} + \nabla \cdot (\rho\boldsymbol{U})=0
+$$
+
+
