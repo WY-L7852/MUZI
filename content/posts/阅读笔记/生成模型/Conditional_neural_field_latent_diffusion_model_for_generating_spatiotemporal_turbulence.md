@@ -1,5 +1,5 @@
 ---
-title: 'Conditional neural field latent diffusion model for generating spatiotemporal turbulence'
+title: 'CoNFiLD阅读笔记'
 date: '2025-07-11T12:56:54+08:00'
 lastmod: '2025-07-11T12:56:54+08:00'
 author: "木子"
@@ -28,8 +28,6 @@ cover:
     alt: "" # 图片的替代文本
     relative: false # 控制图片路径的解析方式
 ---
-
-# Background
 在Eddy-resolving-turbulence simulations中，传统方法，如直接数值模拟或大涡模拟需要极高的计算资源，这限制了他们在高雷诺数或者实时场景下的应用。
 
 基于深度学习的代理模型，通常是确定性框架(比如CNN等，这些模型由于参数固定，所以同样的输入会得到同样的输出)，难以捕捉到湍流本身的混沌性与随机性。
