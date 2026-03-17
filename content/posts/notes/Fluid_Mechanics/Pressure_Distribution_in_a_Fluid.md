@@ -1,5 +1,5 @@
 ---
-title: 'Pressure_Distribution_in_a_Fluid'
+title: 'Pressure Distribution in a Fluid'
 date: '2025-11-05T14:05:20+08:00'
 lastmod: '2025-11-05T14:05:20+08:00'
 author: "木子"
@@ -29,7 +29,7 @@ cover:
     relative: false # 控制图片路径的解析方式
 ---
 ## Pressure and Pressure Gradient
-![alt text](./images/fig_2.2.png)
+![alt text](images/fig_2.2.png)
 假设 Fluid Element 如图所示。我们可以写出各个方向上的压力
 $$
 \begin{align*}
