@@ -29,7 +29,7 @@ cover:
     relative: false # 控制图片路径的解析方式
 ---
 ## Pressure and Pressure Gradient
-![alt text](https://github.com/WY-L7852/MUZI/tree/main/content/posts/notes/Fluid_Mechanics/images/fig_2.2.png)
+![alt text](/Fluid_Mechanics_images/fig_2.2.png)
 假设 Fluid Element 如图所示。我们可以写出各个方向上的压力
 $$
 \begin{align*}
