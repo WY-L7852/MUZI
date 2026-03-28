@@ -1,6 +1,4 @@
 baseURL: https://wy-l7852.github.io/MUZI/
-languageCode: en-us
-title: My New Hugo Site
 
 languageCode: "zh-cn"  # 网站的默认语言代码
 title: "木子's Blog"  # 博客的标题
