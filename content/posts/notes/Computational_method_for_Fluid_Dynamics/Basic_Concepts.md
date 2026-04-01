@@ -1,5 +1,5 @@
 ---
-title: 'Basic_Concepts'
+title: 'Basic Concepts'
 date: '2026-03-30T16:18:50+08:00'
 lastmod: '2026-03-30T16:18:50+08:00'
 author: "木子"
