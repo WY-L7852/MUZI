@@ -4,7 +4,7 @@ date: 2025-07-03
 lastmod: 2024-11-22
 tags:
 keywords:
-summary: CFD
+summary: "Computational method for Fluid Dynamics(Joel H. Ferziger/Milovan PeriC)学习笔记"
 description: "Computational method for Fluid Dynamics(Joel H. Ferziger/Milovan PeriC)"
 cover:
     image: ""
