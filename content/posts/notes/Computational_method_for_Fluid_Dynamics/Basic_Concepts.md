@@ -52,19 +52,52 @@ cover:
 
 ##  Conservation Principles
 
-对于一个 **控制质量（Control Mass, CM）**，设其某一广延量为 $\Phi$，对应的单位质量物理量为 $\phi$，流体密度为 $\rho$，则有：
+雷诺运输定理(Reynolds' Transport theorem):
 $$
-\Phi = \int_{V_{CM}} \rho \, \phi \, dV
+\frac{d}{dt}\int_{\Omega_{CM}} \rho\phi d\Omega = \frac{d}{dt}\int_{\Omega_{CV}}\rho\phi d\Omega + \int_{S_{CV}} \rho \phi (\mathbf{v-v_b})\cdot\mathbf{n}dS
 $$
-其中：
 
-- $\phi$：单位质量的该物理量（例如动量对应速度）
-- $\rho \, dV$：体积元 $dV$ 中所包含的质量
-- $\rho \phi \, dV$：该体积元中所包含的该物理量
+- $\phi$表示单位质量物质所携带的物理量。
+- $\mathbf{v_b}$表示控制体的移动速度
 
-因此，上式表示：
+接下来进行简单的推导：
 
-> **将每个微小体积中的物理量累加起来，就得到整个控制质量的总量 $\Phi$**
+![](Computational_method_for_Fluid_Dynamics/Basic_Concept_fig_1.png)
+
+假设再$t$时刻时，一个CM正好与一个固定的CV重合，那么此时存在
+$$
+\Phi_{CM}(t) = \Phi_{CV}(t)
+$$
+当$t+dt$时刻时，如上图所示，有
+$$
+\Phi_{CV}(t+dt) = \Phi_{CM}(t+dt)-d\Phi_{out}+d\Phi_{in}
+$$
+所以$\Phi_{CV}$的变化率可以写为:
+$$
+\begin{align}
+\frac{d\Phi_{CV}}{dt} &= \frac{\Phi_{CV}(t+dt)-\Phi_{CV}(t)}{dt}\\
+&=\frac{\Phi_{CM}(t+dt)-d\Phi_{out}+d\Phi_{in} -\Phi_{CV}(t)}{dt}\\
+\end{align}
+$$
+由于前面提到过，$t$时刻时CM和CV是重合的，因此，有
+$$
+\begin{align}
+\frac{d\Phi_{CV}}{dt} &=\frac{\Phi_{CM}(t+dt)-\Phi_{CM}(t)}{dt}-\frac{d\Phi_{out}-d\Phi_{in}}{dt}\\
+&=\frac{d\Phi_{CM}(t)}{dt}-\frac{d\Phi_{out}-d\Phi_{in}}{dt}
+\end{align}
+$$
+整理之后可得
+$$
+\frac{d\Phi_{CM}(t)}{dt} = \frac{d\Phi_{CV}}{dt}+\frac{d\Phi_{out}-d\Phi_{in}}{dt}
+$$
+可以注意到的是，等式右侧的第二项 $\frac{d\Phi_{out}-d\Phi_{in}}{dt}$描述的是该控制体内流入流出的总量，也就是流经控制体表面的通量总和，可以写成积分形式为:
+$$
+\int_{CS}\rho\phi\mathbf{v}\cdot\mathbf{n}dS
+$$
+此处将控制体速度视为 0。
+
+此外，$\Phi_{CM}(t)$和$\Phi_{CV}(t)$也可以写为体积分形式，最终可以得到完整的积分形式雷诺运输定理。
+
 
 
 
