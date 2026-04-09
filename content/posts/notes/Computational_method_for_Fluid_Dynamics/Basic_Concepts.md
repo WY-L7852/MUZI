@@ -98,7 +98,89 @@ $$
 
 此外，$\Phi_{CM}(t)$和$\Phi_{CV}(t)$也可以写为体积分形式，最终可以得到完整的积分形式雷诺运输定理。
 
+## Mass Conservation
 
+当我们$\phi$取 1 时，我们就获得了质量守恒公式:
+$$
+\frac{\partial}{\partial t}\int\rho d\Omega+\int\rho\mathbf{v}\cdot\mathbf{n}dS = 0
+$$
+根据高斯散度定理，公式中的面积分可以转变成控制体的散度的积分，那么获得:
+$$
+\frac{\partial}{\partial t}\int\rho d\Omega+\int\nabla\cdot(\rho\mathbf{v})d\Omega = 0
+$$
+若控制体无限小，就可以得到质量守恒公式的微分形式:
+$$
+\frac{\partial\rho}{\partial t}+\nabla\cdot(\rho\mathbf{v})=0
+$$
+
+##  Momentum Conservation
+
+当我们$\phi$取 $\mathbf{v}$ 时，我们就获得了动量守恒公式:
+
+$$
+\frac{d}{dt}\int_{\Omega_{CM}} \rho\mathbf{v} d\Omega = \frac{d}{dt}\int_{\Omega_{CV}}\rho\mathbf{v} d\Omega + \int_{S_{CV}} \rho\mathbf{v} (\mathbf{v}\cdot\mathbf{n})dS
+$$
+化简：
+
+设 $\mathbf{v} = (v_i)$，$\mathbf{n} = (n_j)$，那么:
+$$
+\begin{align*}
+\rho\mathbf{v} (\mathbf{v}\cdot\mathbf{n}) &= \rho v_i(v_jn_j)\\
+&=(\rho\mathbf{v}\otimes\mathbf{v})\cdot \mathbf{n}
+\end{align*}
+$$
+同样根据高斯散度定理，原式右侧的通量项可以转化为体积分:
+$$
+\int_\Omega\nabla\cdot(\rho\mathbf{v}\otimes\mathbf{v})d\Omega
+$$
+接下来分析等式左侧。很明显 ，等式左侧表达的是该控制体内的流体当前所受到的合力 $\mathbf{F}$，而合力$\mathbf{F}$由 body force 和 surface force 组成。其中，体力可以表达为:
+$$
+\int_\Omega \rho\mathbf{f}_{body}d\Omega
+$$
+表面力则可以用应力张量表示，也就是:
+$$
+\int_{S_{CV}}\boldsymbol{\sigma}\cdot\mathbf{n}dS
+$$
+同样应用高斯散度定理，转化为体积分:
+$$
+\int_{\Omega}\nabla\cdot\boldsymbol{\sigma}d\Omega
+$$
+具体此处与应力张量相关的内容可以参考这里的另一篇文章。
+
+最后，去掉两边积分转化为局部形式，动量守恒公式可以化简为:
+$$
+\rho\mathbf{f}_{body}+\nabla\cdot\boldsymbol{\sigma}=\frac{\partial(\rho\mathbf{v})}{\partial t}+\nabla\cdot(\rho\mathbf{v}\otimes\mathbf{v})
+$$
+根据恒等式：
+$$
+\nabla\cdot(\rho\mathbf{v}\otimes\mathbf{v})=\rho(\mathbf{v}\cdot\nabla)\mathbf{v}+\mathbf{v}(\nabla\cdot(\rho \mathbf{v}))
+$$
+可以进行进一步化简:
+$$
+\begin{align*}
+\rho\mathbf{f}_{body}+\nabla\cdot\boldsymbol{\sigma}&=\frac{\partial(\rho\mathbf{v})}{\partial t}+\nabla\cdot(\rho\mathbf{v}\otimes\mathbf{v})\\
+&=\rho\frac{\partial\mathbf{v}}{\partial t}+\mathbf{v}\frac{\partial\rho}{\partial t}+\rho(\mathbf{v}\cdot\nabla)\mathbf{v}+\mathbf{v}(\nabla\cdot(\rho \mathbf{v}))\\
+&=\rho\frac{\partial\mathbf{v}}{\partial t}+\rho(\mathbf{v}\cdot\nabla)\mathbf{v}+\mathbf{v}(\underbrace{\frac{\partial\rho}{\partial t}+\nabla\cdot(\rho \mathbf{v})}_\text{连续性方程})
+\end{align*}
+$$
+最后，可以得到
+$$
+\rho\mathbf{f}_{body}+\nabla\cdot\boldsymbol{\sigma}=\rho\frac{\partial\mathbf{v}}{\partial t}+\rho(\mathbf{v}\cdot\nabla)\mathbf{v}
+$$
+## Conservation of scalar quantities
+
+其他的一些标量守恒量也可以表达为以下形式:
+$$
+\frac{\partial}{\partial t}\int\rho \phi d\Omega+\int\rho\phi\mathbf{v}\cdot\mathbf{n}dS = \sum f_\phi
+$$
+$f_\phi$表示除了流体运动之外，所有导致物理量$\phi$改变的机制，这一项由扩散和源/汇两部分构成。值得注意的是，扩散行为通常是从高扩散到低，所以通常是通过梯度描述的，因此，有通式：
+$$
+\frac{\partial}{\partial t}\int\rho \phi d\Omega+\int\rho\phi\mathbf{v}\cdot\mathbf{n}dS = \int_S\Gamma\nabla\phi\cdot\mathbf{n}dS+\int_\Omega q_\phi d\Omega
+$$
+同样有微分形式：
+$$
+\frac{\partial\rho\phi}{\partial t}+\nabla\cdot(\rho\phi\mathbf{v}) = \nabla\cdot(\Gamma\nabla\phi)+q_\phi
+$$
 
 
 
