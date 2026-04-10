@@ -9,7 +9,7 @@ keywords: # 关键词
   - CFD
 
 description: "基础流体知识"
-summary: 概述
+summary: 守恒方程的推导 
 weight: 1
 slug: "" # 使用 slug属性 来作为当前文章的有效 url 的末尾部分
 draft: false # 是否为草稿
