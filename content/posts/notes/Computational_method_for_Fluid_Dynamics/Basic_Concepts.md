@@ -1,5 +1,5 @@
 ---
-title: 'Basic Concepts'
+title: 'Basic Concept of Fluid Flow'
 date: '2026-03-30T16:18:50+08:00'
 lastmod: '2026-03-30T16:18:50+08:00'
 author: "木子"
@@ -10,7 +10,7 @@ keywords: # 关键词
 
 description: "基础流体知识"
 summary: 守恒方程的推导 
-weight: 1
+weight: 10
 slug: "" # 使用 slug属性 来作为当前文章的有效 url 的末尾部分
 draft: false # 是否为草稿
 comments: false # 本页面是否显示评论
@@ -27,7 +27,6 @@ cover:
     alt: "" # 图片的替代文本
     relative: false # 控制图片路径的解析方式
 ---
-# Basic Concept of Fluid Flow
 
 流体是一种分子结构不会抵抗外部剪切力的物质。非常微小的力也会使其形变(deformation)。
 

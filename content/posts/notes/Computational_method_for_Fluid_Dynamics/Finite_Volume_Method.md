@@ -4,14 +4,12 @@ date: '2026-04-10T17:41:25+08:00'
 lastmod: '2026-04-10T17:41:25+08:00'
 author: "木子"
 tags: # 标签
-  - 
-  - 
+  - CFD
 keywords: # 关键词
-  - 
-  - 
-description: "文章描述"
-summary: 概述
-weight: # 权重
+  - CFD
+description: "FVM基础"
+summary: 什么是FVM
+weight: 10 # 权重
 slug: "" # 使用 slug属性 来作为当前文章的有效 url 的末尾部分
 draft: false # 是否为草稿
 comments: false # 本页面是否显示评论

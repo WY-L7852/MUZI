@@ -9,5 +9,5 @@ description: "强化学习笔记"
 cover:
     image: ""
 hidemeta: true 
-weight: 1
+weight: 10
 ---
